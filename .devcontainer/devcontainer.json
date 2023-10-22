@@ -25,5 +25,9 @@
     "mounts": [
       "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
     ],
+    "containerEnv": {
+      "PNPM_HOME" :"${localEnv:HOME}",
+      "PATH": "${localEnv:PATH}:{localEnv:HOME}"
+    },
     "postCreateCommand": "pnpm install -g winglang"
   }
